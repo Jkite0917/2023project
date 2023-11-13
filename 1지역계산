@@ -18,15 +18,15 @@ if choice.upper() == "Y":
     if open.upper() == "Y":
         dayresult = daynum*onemoney - (alllist-daynum)*(onemoney / 2)
         day7result = dayresult*playday - openmoney*5
-        print("7일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 비용 포함)\n")
+        print(playday,"일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 비용 포함)\n")
     
     else:
         dayresult = daynum*onemoney - (alllist-daynum)*(onemoney / 2)
-        day7result = dayresult*7
-        print("7일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 미포함)\n")
+        day7result = dayresult*playday
+        print(playday,"일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 미포함)\n")
         
 else:    
-    for i in range(7):
+    for i in range(playday):
         day = i+1
         print(day,"day")
 
