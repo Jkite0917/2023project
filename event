@@ -1,0 +1,38 @@
+import random
+
+list40 = [4, 4, 4, 4, 6, 6, 6, 6, 6, 6]
+list80 = [8, 8, 8, 8, 8, 8, 8, 8, 2, 2]
+
+simulations = 100000  # 시뮬레이션 횟수
+total_days = 14  # 시뮬레이션 기간
+
+results = {"일어남": 0, "잠": 0}
+
+for _ in range(simulations):
+    a = 4
+    for _ in range(total_days):
+        if a == 4:
+            random_element = random.choice(list40)
+            if random_element == 4:
+                a = 4
+                results["일어남"] += 1
+            else:
+                a = 8
+                results["잠"] += 1
+        elif a == 8:
+            random_element = random.choice(list80)
+            if random_element == 8:
+                a = 4
+                results["일어남"] += 1
+            else:
+                a = 10
+                results["잠"] += 1
+        else:
+            results["일어남"] += 1
+            a = 4
+
+average_wake_up = results["일어남"] / simulations
+average_sleep = results["잠"] / simulations
+
+print(f"평균적으로 '일어남'이 나타나는 횟수: {average_wake_up:.2f}")
+print(f"평균적으로 '잠'이 나타나는 횟수: {average_sleep:.2f}")
