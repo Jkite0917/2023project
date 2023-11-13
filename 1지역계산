@@ -1,9 +1,13 @@
-print("총 6문제입니다.")
+print("총 7문제입니다.")
 
 dayresult = 0
 day7result = 0
-openmoney = 20
 opennum = 0
+openmoney = 10
+onemoney = 10
+alllist = 7
+playday = 7
+
 
 choice = input("한번에 계산할까요?, 하루하루 할까요? [Y/n]: ")
 
@@ -12,12 +16,12 @@ if choice.upper() == "Y":
     
     open = input("날마다 계약도 진행할까요? 5번 계약합니다. [Y/n]: ")
     if open.upper() == "Y":
-        dayresult = daynum*10 - (6-daynum)*5
-        day7result = dayresult*7 - openmoney*5
+        dayresult = daynum*onemoney - (alllist-daynum)*(onemoney / 2)
+        day7result = dayresult*playday - openmoney*5
         print("7일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 비용 포함)\n")
     
     else:
-        dayresult = daynum*10 - (6-daynum)*5
+        dayresult = daynum*onemoney - (alllist-daynum)*(onemoney / 2)
         day7result = dayresult*7
         print("7일동안 ", daynum,"회 정답으로 벌은 총 아르는", day7result,"아르 입니다. (계약 미포함)\n")
         
@@ -28,7 +32,7 @@ else:
 
         if True:
             daynum = int(input("몇 문제나 맟추나요?: "))
-            dayresult = daynum*10 - (6-daynum)*5
+            dayresult = daynum*onemoney - (alllist-daynum)*(onemoney / 2)
             print(day,"일차 수익은", dayresult,"아르입니다.\n")
             day7result += dayresult
 
@@ -37,7 +41,7 @@ else:
                 open = input("다음 물품을 계약할까요? 20 아르 입니다. [Y/n]: ")
                 if open.upper() == "Y":
                     opennum += 1
-                    day7result -= 20
+                    day7result -= openmoney
                     print("물건을 계약했습니다.", day7result,"아르 남았습니다\n")
                 else: 
                     print("물건을 계약하지 않았습니다.")
