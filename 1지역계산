@@ -1,12 +1,12 @@
 print("총 7문제입니다.")
 
-dayresult = 0
-day7result = 0
-opennum = 0
-openmoney = 10
-onemoney = 10
-alllist = 7
-playday = 7
+dayresult = 0        # 하루에 벌은 수익
+day7result = 0       # 총합
+opennum = 0          # 계약(5개) 조건식을 위한 
+openmoney = 10       # 계약비용 (지역마다 수정)
+onemoney = 10        # 물품 개당 비용
+alllist = 7          # 하루 손님 수
+playday = 7          # 플레이 일 수 
 
 
 choice = input("한번에 계산할까요?, 하루하루 할까요? [Y/n]: ")
